@@ -1,0 +1,626 @@
+/* Import the required fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Belanosima&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+/* Navigation Overlay */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Dark overlay */
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay-content a:hover {
+    color: #f39c12;
+    /* Highlight color on hover */
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #fff;
+}
+
+/* Top Icon */
+.top-icon {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.top-icon img {
+    width: 100%;
+    height: auto;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+    background-color: #fff5e6;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+/* The Awaken Font Settings */
+.hero-content h1 {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 184px;
+    font-weight: 400;
+    line-height: 142px;
+    color: #d89b3a;
+    text-align: left;
+    margin: 0;
+}
+
+/* Paragraph text */
+.hero-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 42px;
+    color: #7d7d7d;
+    margin-top: 20px;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Button Container */
+.hero-buttons {
+    margin-top: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Learn More Button - extended width */
+.hero-buttons .learn-more {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 42px;
+    padding: 10px 80px 10px 25px;
+    /* Adjusted padding */
+    border-radius: 10px;
+    background-color: #6a4f2a;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    min-width: 250px;
+    /* Set a minimum width */
+}
+
+/* Buy Now Button - positioned inside Learn More */
+.hero-buttons .buy-now {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 42px;
+    padding: 10px 25px;
+    background-color: #f39c12;
+    color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Book Image */
+.hero-image img {
+    width: 500px;
+    margin-left: -50px;
+}
+
+/* Pricing Section */
+.pricing-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.pricing-section h2 {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #d89b3a;
+}
+
+.pricing-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #7d7d7d;
+    margin-bottom: 30px;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pricing-card {
+    background-color: #fdf1e6;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-card h3 {
+    font-size: 20px;
+    color: #d89b3a;
+    margin-bottom: 10px;
+}
+
+.pricing-card .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pricing-card p {
+    font-size: 14px;
+    color: #7d7d7d;
+    margin-bottom: 20px;
+}
+
+.pricing-card .btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #d89b3a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Highlighted Card */
+.pricing-card.highlighted {
+    background-color: #d89b3a;
+    color: #fff;
+}
+
+.pricing-card.highlighted h3,
+.pricing-card.highlighted .price,
+.pricing-card.highlighted p {
+    color: #fff;
+}
+
+/* Author Section */
+.author-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff5e6;
+}
+
+.author-section h2 {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #d89b3a;
+}
+
+.author-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.author-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.author-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #7d7d7d;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #fff5e6;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+    margin-bottom: 20px;
+}
+
+.footer-content a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.footer-content img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.footer-content img:hover {
+    transform: scale(1.2);
+    /* Slight zoom effect on hover */
+}
+
+.footer-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #7d7d7d;
+}
+
+.footer-nav a:hover {
+    color: #d89b3a;
+    /* Highlight color on hover */
+}
+
+/* Preview Page-Specific Styles */
+
+/* Hero Section */
+.preview-page .hero-section {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 50px;
+    background-color: #333;
+    color: white;
+    min-height: 400px;
+    /* Adjusted to fill more space */
+}
+
+.preview-page .hero-content {
+    max-width: 50%;
+}
+
+.preview-page .hero-content h1 {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 120px;
+    /* Increased size */
+    margin: 0;
+}
+
+.preview-page .hero-content h3 {
+    font-size: 24px;
+    margin: 10px 0 0;
+}
+
+.preview-page .hero-image img {
+    width: 700px;
+    /* Increased size */
+    height: 500px;
+    margin-right: 20px;
+}
+
+/* Book Preview Section */
+.preview-page .preview-section {
+    padding: 50px;
+    background-color: #fff;
+    color: #333;
+}
+
+.preview-page .preview-section h2 {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 36px;
+    color: #d89b3a;
+    margin-bottom: 30px;
+}
+
+.preview-page .preview-section p,
+.preview-page .preview-section ul {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.preview-page .preview-section ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.preview-page .preview-section h3 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Footer Section Scoped */
+.preview-page .footer-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+}
+
+.preview-page .footer-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #7d7d7d;
+}
+
+.preview-page .footer-nav a:hover {
+    color: #d89b3a;
+}
+
+/* Buttons and Images (Specific to Preview Page) */
+.preview-page .btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    background-color: #f39c12;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.preview-page .btn:hover {
+    background-color: #d89b3a;
+}
+
+/* Checkout Page */
+.checkout-page {
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+/* Checkout Hero Section */
+.checkout-hero {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    align-items: center;
+}
+
+.checkout-hero-content h1 {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 48px;
+    margin: 0;
+}
+
+.checkout-hero-image img {
+    width: 300px;
+    height: auto;
+}
+
+/* Checkout Form Section */
+.checkout-form-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.checkout-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.book-summary {
+    flex: 1;
+}
+
+/* Book Card Container */
+.book-card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+/* Rectangle Background */
+.rectangle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Book Image Superimposed */
+.book-img {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:350px;
+    z-index: 2;
+}
+
+/* Payment Form Section */
+.payment-form {
+    flex: 2;
+    padding-left: 50px;
+}
+
+.payment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.payment-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.pay-now-btn {
+    padding: 15px 25px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+}
+
+.pay-now-btn:hover {
+    background-color: #d89b3a;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.terms input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.terms label {
+    font-size: 14px;
+}
+
+.terms label a {
+    color: #f39c12;
+}
+
+/* Footer Section */
+.footer-section {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #fff5e6;
+}
+
+.footer-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #7d7d7d;
+}
+
+.footer-nav a:hover {
+    color: #d89b3a;
+}
+
+/* Payment Form Styles */
+.payment-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+.payment-form .form-group {
+    margin-bottom: 15px;
+}
+
+.payment-form label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.payment-form input[type="text"],
+.payment-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.payment-form .submit-btn {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.payment-form .submit-btn:hover {
+    background-color: #d89b3a;
+}
+
+.payment-form .terms {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.payment-form .terms input[type="checkbox"] {
+    margin-right: 10px;
+}
