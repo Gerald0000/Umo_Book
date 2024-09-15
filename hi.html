@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Navigation Menu (Hidden by default) -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="/index.html">About</a> <!-- Links to the "About" section -->
+            <a href="/preview.html">Reviews</a> <!-- Links to the "Reviews" section -->
+            <a href="#author">Author</a> <!-- Links to the "Author" section -->
+            <a href="/preview.html">Overview</a> <!-- Links to the "Overview" section -->
+        </div>
+    </div>
+
+    <section>
+        <!-- Top Icon Button (Triggers the Navigation) -->
+        <div class="top-icon" onclick="openNav()">
+            <img src="jam_menu.png" alt="Menu Icon">
+        </div>
+
+        <!-- Header Section -->
+        <header class="hero-section" id="overview"> <!-- Added id for "Overview" -->
+            <div class="hero-content">
+                <h1>The Awaken</h1>
+                <p>The Awaken is a guide to unlocking scholarships, providing step-by-step strategies for finding
+                    funding, writing compelling applications, and securing financial aid for education.</p>
+                <div class="hero-buttons">
+                    <a href="#pricing" class="btn learn-more">Learn More</a> <!-- Added anchor link to Pricing -->
+                    <a href="/checkout.html" class="btn buy-now">Buy Now</a> <!-- Added anchor link to Checkout -->
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero-image.png" alt="The Awaken Book Cover">
+            </div>
+        </header>
+    </section>
+
+    <section class="pricing-section" id="pricing"> <!-- Added id for "Pricing" -->
+        <h2>Book Pricing In Different Currencies</h2>
+        <p>Get access to "The Awaken" at an affordable price, no matter where you are in the world.</p>
+
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Dollar Currency</h3>
+                <p class="price">$25</p>
+                <p>Explore the secrets to winning scholarships and securing financial aid with "The Awaken." A valuable
+                    resource for students in the United States.</p>
+                <a href="/checkout.html" class="btn">Get It Now</a> <!-- Added anchor link to Checkout -->
+            </div>
+
+            <div class="pricing-card highlighted">
+                <h3>Euro Currency</h3>
+                <p class="price">€22</p>
+                <p>Unlock scholarship opportunities across Europe. "The Awaken" provides actionable strategies for
+                    securing funding for your studies.</p>
+                <a href="/checkout.html" class="btn">Get It Now</a> <!-- Added anchor link to Checkout -->
+            </div>
+
+            <div class="pricing-card">
+                <h3>Naira Currency</h3>
+                <p class="price">₦5,000</p>
+                <p>Tailored for students in Nigeria, "The Awaken" offers insights into winning local and international
+                    scholarships to fund your education.</p>
+                <a href="/checkout.html" class="btn">Get It Now</a> <!-- Added anchor link to Checkout -->
+            </div>
+        </div>
+    </section>
+
+    <section class="author-section" id="author"> <!-- Added id for "Author" -->
+        <h2>A Word from the Author</h2>
+        <div class="author-content">
+            <div class="author-image">
+                <img src="author-image.jpeg" alt="Author Image">
+            </div>
+            <div class="author-text">
+                <p>
+                    "As a scholarship recipient myself, I understand the challenges and opportunities that come with
+                    pursuing higher education.
+                    In this book, I aim to guide students through the scholarship process, offering actionable
+                    strategies for success."
+                </p>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <script>
+        /* Open the overlay navigation */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        /* Close the overlay navigation */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+    <footer class="footer-section">
+        <div class="footer-content">
+            <a href="https://www.facebook.com/umo.nsi?mibextid=LQQJ4d" target="_blank">
+                <img src="facebook-icon.png" alt="Facebook Icon">
+            </a>
+            <a href="https://www.linkedin.com/in/umo-nsi-ab761b53?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                target="_blank">
+                <img src="linkedin-icon.png" alt="LinkedIn Icon">
+            </a>
+            <a href="mailto:umocontract@yahoo.com">
+                <img src="email-icon.png" alt="Email Icon">
+            </a>
+        </div>
+        <nav class="footer-nav">
+            <a href="#about">About</a> <!-- Added anchor link to "About" -->
+            <a href="#reviews">Reviews</a> <!-- Added anchor link to "Reviews" -->
+            <a href="#author">Author</a> <!-- Added anchor link to "Author" -->
+            <a href="#overview">Overview</a> <!-- Added anchor link to "Overview" -->
+        </nav>
+    </footer>
+</body>
+</html>
