@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Belanosima&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <h1 style="text-align: center; color:  #d89b3a;">Booking Appointment</h1>
+        <!-- Checkout Form Section -->
+    <section class="checkout-form-section">
+            
+            <div class="book-summary">
+                <div class="book-card">
+                    <img src="Rectangle 4176.png" alt="Rectangle Background" class="rectangle-bg">
+
+                    <!-- Book Image (Superimposed) -->
+                    <img src="Book.png" alt="The Awaken Book" class="book-img">
+                    <div class="book-details">
+                        <h2>The Awaken</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-form">
+                <form id="checkout-form" action="submit_checkout.php" method="POST">
+                    <div class="form-group">
+                        <label for="card-name">Time Booking</label>
+                        <input type="time" id="card-name" name="Time Booking" placeholder="Time Booking" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Date Booking</label>
+                        <input type="date" id="card-number" name="Date Booking" placeholder="Date Booking" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-name">Card Name</label>
+                        <input type="text" id="card-name" name="card-name" placeholder="Enter Card Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="Enter Card Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="password" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Book Appointment</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="terms">
+                            <input type="checkbox" name="terms" required> I have read and agree to the Terms of Use and Privacy Policy
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        
+    </section>
+    <footer class="footer-section">
+        <nav class="footer-nav">
+            <a href="#">About</a>
+            <a href="#">Reviews</a>
+            <a href="#">Author</a>
+            <a href="#">Overview</a>
+        </nav>
+    </footer>
+</body>
+
+</html>

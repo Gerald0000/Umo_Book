@@ -461,6 +461,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .checkout-section {
@@ -471,7 +472,7 @@ body {
 }
 
 .book-summary {
-    margin-bottom: 15px;
+    margin: 15px;
 }
 
 /* Book Card Container */
@@ -636,9 +637,16 @@ body {
 .payment-form .terms input[type="checkbox"] {
     margin-right: 10px;
 }
+.BookAppointment{
+    text-align: center;
+    color: #d89b3a;
+    font-size:larger;
+    text-decoration: none;
+    cursor:pointer;
+}
 @media (max-width: 737px) {
     .hero-content h1 {
-        font-size: 90px;
+        font-size: 60px;
         line-height: 100px;
     }
     .preview-page .hero-content h1 {
