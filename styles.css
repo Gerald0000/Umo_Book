@@ -145,6 +145,7 @@ body {
     padding: 10px 5%;
     background-color: #f39c12;
     color: #fff;
+    word-wrap: unset;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
