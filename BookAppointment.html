@@ -11,22 +11,13 @@
 </head>
 
 <body>
-    <h1 style="text-align: center; color:  #d89b3a;">Booking Appointment</h1>
+    <h1 style="text-align: center; color:  #d89b3a;">Booking an Appointment</h1>
         <!-- Checkout Form Section -->
-    <section class="checkout-form-section">
-            
-            <div class="book-summary">
-                <div class="book-card">
-                    <img src="Rectangle 4176.png" alt="Rectangle Background" class="rectangle-bg">
-
-                    <!-- Book Image (Superimposed) -->
-                    <img src="Book.png" alt="The Awaken Book" class="book-img">
-                    <div class="book-details">
-                        <h2>The Awaken</h2>
-                    </div>
-                </div>
-            </div>
+    <section>
+        <p class="booking-statement">Secure Your Reservation: Complete Your Payment Conveniently with Credit/Debit Card, USSD, Bank Transfer, or Alternative Payment Methods. 
+            Once Payment is Confirmed, Proceed to Schedule a 40-Minute Meeting with Us.</p>
             <div class="payment-form">
+                <label style="text-align: center; font-weight: 600;">40 minutes consultation fee is ₦120,000</label>
                 <form id="checkout-form" action="submit_checkout.php" method="POST">
                     <div class="form-group">
                         <label for="card-name">Time Booking</label>
@@ -36,30 +27,16 @@
                         <label for="card-number">Date Booking</label>
                         <input type="date" id="card-number" name="Date Booking" placeholder="Date Booking" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="card-name">Card Name</label>
-                        <input type="text" id="card-name" name="card-name" placeholder="Enter Card Name" required>
+                        <label for="card-name">Username</label>
+                        <input type="text" id="card-name" name="Time Booking" placeholder="Username" required>
                     </div>
                     <div class="form-group">
-                        <label for="card-number">Card Number</label>
-                        <input type="text" id="card-number" name="card-number" placeholder="Enter Card Number" required>
+                        <label for="card-number">Email address</label>
+                        <input type="text" id="card-number" name="Date Booking" placeholder="Email address" required>
                     </div>
                     <div class="form-group">
-                        <label for="expiry-date">Expiry Date</label>
-                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cvv">CVV</label>
-                        <input type="password" id="cvv" name="cvv" placeholder="Enter CVV" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="submit-btn">Book Appointment</button>
-                    </div>
-                    <div class="form-group">
-                        <label class="terms">
-                            <input type="checkbox" name="terms" required> I have read and agree to the Terms of Use and Privacy Policy
-                        </label>
+                        <button type="submit" class="submit-btn">Pay Now</button>
                     </div>
                 </form>
             </div>
@@ -74,6 +51,7 @@
             <a href="#">Reviews</a>
             <a href="#">Author</a>
             <a href="#">Overview</a>
+            <a href="BookAppointment.html">Book Appointment</a>
         </nav>
     </footer>
 </body>
