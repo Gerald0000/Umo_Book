@@ -21,7 +21,7 @@
                 <form id="checkout-form" action="submit_checkout.php" method="POST">
                     <div class="form-group">
                         <label for="card-name">Time Booking</label>
-                        <input type="time" id="card-name" name="Time Booking" placeholder="Time Booking" required>
+                        <input type="time" id="card-name" class="time-booking" name="Time Booking" placeholder="Time Booking" required>
                     </div>
                     <div class="form-group">
                         <label for="card-number">Date Booking</label>
@@ -55,6 +55,25 @@
         </nav>
         <a href="" class="Terms-of-Use"> Terms of Use and Privacy Policy</a>
     </footer>
+    <script>
+        function setUKTime() {
+            const timeInput = document.querySelector('.time-booking');
+            
+            // Get the current time in the UK (GMT or BST based on the time of year)
+            const now = new Date();
+            const ukTime = new Date(now.toLocaleString('en-GB', { timeZone: 'Europe/London' }));
+
+            // Format the time as HH:MM
+            const hours = String(ukTime.getHours()).padStart(2, '0');
+            const minutes = String(ukTime.getMinutes()).padStart(2, '0');
+            
+            // Set the value of the input to the UK time
+            timeInput.value = `${hours}:${minutes}`;
+        }
+
+        // Set the time input value to UK time when the page loads
+        window.onload = setUKTime;
+    </script>
 </body>
 
 </html>
