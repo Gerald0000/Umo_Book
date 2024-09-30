@@ -6,74 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Belanosima&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Belanosima&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1 style="text-align: center; color:  #d89b3a;">Booking an Appointment</h1>
-        <!-- Checkout Form Section -->
+    <h1 style="text-align: center; color: #d89b3a;">Booking an Appointment</h1>
+    
+    <!-- Checkout Form Section -->
     <section>
-        <p class="booking-statement">Secure Your Reservation: Complete Your Payment Conveniently with Credit/Debit Card, USSD, Bank Transfer, or Alternative Payment Methods. 
-            Once Payment is Confirmed, Proceed to Schedule a 40-Minute Meeting with Us.</p>
-            <div class="payment-form">
-                <label style="text-align: center; font-weight: 600;">40 minutes consultation fee is $200</label>
-                <form id="checkout-form" action="submit_checkout.php" method="POST">
-                    <div class="form-group">
-                        <label for="card-name">Time Booking</label>
-                        <input type="time" id="card-name" class="time-booking" name="Time Booking" placeholder="Time Booking" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="card-number">Date Booking</label>
-                        <input type="date" id="card-number" name="Date Booking" placeholder="Date Booking" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="card-name">Username</label>
-                        <input type="text" id="card-name" name="Time Booking" placeholder="Username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="card-number">Email address</label>
-                        <input type="text" id="card-number" name="Date Booking" placeholder="Email address" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="submit-btn">Pay Now</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <!-- Footer Section -->
-        
+        <p class="booking-statement">
+            Secure Your Reservation: Complete Your Payment Conveniently with Credit/Debit Card, USSD, Bank Transfer, or Alternative Payment Methods.
+            Once Payment is Confirmed, Proceed to Schedule a 40-Minute Meeting with Us.
+        </p>
+        <div class="payment-form">
+            <label style="text-align: center; font-weight: 600;">Office time: 9:00 AM to 5:00 PM</label>
+            <label style="text-align: center; font-weight: 600;">(UK London Time)</label>
+            <label style="text-align: center; font-weight: 600;">40 minutes consultation fee is $200</label>
+            <form id="checkout-form" action="submit_checkout.php" method="POST" onsubmit="return validateTime();">
+                <div class="form-group">
+                    <label for="time-booking">Time Booking</label>
+                    <input type="time" id="time-booking" class="time-booking" name="time_booking" required>
+                </div>
+                <div class="form-group">
+                    <label for="date-booking">Date Booking</label>
+                    <input type="date" id="date-booking" name="date_booking" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-address">Email Address</label>
+                    <input type="email" id="email-address" name="email_address" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Pay Now</button>
+                </div>
+            </form>
+        </div>
     </section>
+
+    <!-- Footer Section -->
     <footer class="footer-section">
         <nav class="footer-nav">
             <a href="#">About</a>
-            <a href="#">Reviews</a>
+            <a href="Awakenpreview.html">Awaken Preview</a>
+            <a href="Getfundedpreview.html">Funded Preview</a>
             <a href="#">Author</a>
             <a href="#">Overview</a>
             <a href="BookAppointment.html">Book Appointment</a>
         </nav>
-        <a href="" class="Terms-of-Use"> Terms of Use and Privacy Policy</a>
+        <a href="#" class="Terms-of-Use">Terms of Use and Privacy Policy</a>
     </footer>
+
     <script>
-        function setUKTime() {
-            const timeInput = document.querySelector('.time-booking');
-            
-            // Get the current time in the UK (GMT or BST based on the time of year)
-            const now = new Date();
-            const ukTime = new Date(now.toLocaleString('en-GB', { timeZone: 'Europe/London' }));
+        function validateTime() {
+            const timeInput = document.getElementById('time-booking').value;
+            const dateInput = document.getElementById('date-booking').value;
 
-            // Format the time as HH:MM
-            const hours = String(ukTime.getHours()).padStart(2, '0');
-            const minutes = String(ukTime.getMinutes()).padStart(2, '0');
-            
-            // Set the value of the input to the UK time
-            timeInput.value = `${hours}:${minutes}`;
+            if (!dateInput || !timeInput) {
+                alert('Please select both a date and time.');
+                return false; // Prevent form submission
+            }
+
+            // Create a date object based on the input values
+            const bookingDateTime = new Date(`${dateInput}T${timeInput}:00`);
+
+            // Define start and end times in London time
+            const startTime = new Date(bookingDateTime);
+            startTime.setHours(9, 0, 0); // 9 AM London time
+
+            const endTime = new Date(bookingDateTime);
+            endTime.setHours(17, 0, 0); // 5 PM London time
+
+            // Check if the entered time is within the allowed range
+            if (bookingDateTime < startTime || bookingDateTime > endTime) {
+                alert('Please select a time between 09:00 AM and 05:00 PM UK time.');
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
         }
-
-        // Set the time input value to UK time when the page loads
-        window.onload = setUKTime;
     </script>
 </body>
 
 </html>
+
