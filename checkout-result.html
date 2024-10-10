@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Status</title>
+</head>
+
+<body>
+    <h1 id="message"></h1>
+    <script>
+        // Get query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        const messageElement = document.getElementById('message');
+
+        // Handle based on the status
+        if (status === 'successful') {
+            // Redirect to success page
+            messageElement.textContent = 'Payment successful! Redirecting to the success page...';
+            setTimeout(function () {
+                window.location.href = '/success.html';
+            }, 3000); // Wait 3 seconds before redirecting
+        } else if (status === 'cancelled') {
+            // Redirect to cancel page
+            messageElement.textContent = 'Payment cancelled! Redirecting to the cancellation page...';
+            setTimeout(function () {
+                window.location.href = '/cancel.html';
+            }, 3000); // Wait 3 seconds before redirecting
+        } else {
+            // Handle any other statuses or errors
+            messageElement.textContent = 'Payment failed or an unknown error occurred.';
+            setTimeout(function () {
+                window.location.href = '/error.html';
+            }, 3000); // Wait 3 seconds before redirecting to an error page
+        }
+    </script>
+</body>
+
+</html>

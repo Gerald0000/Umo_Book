@@ -22,7 +22,8 @@
             <label style="text-align: center; font-weight: 600;">Office time: 9:00 AM to 5:00 PM</label>
             <label style="text-align: center; font-weight: 600;">(UK London Time)</label>
             <label style="text-align: center; font-weight: 600;">40 minutes consultation fee is $200</label>
-            <form id="checkout-form" action="submit_checkout.php" method="POST" onsubmit="return validateTime();">
+            <label style="text-align: center; font-weight: 600;">Note: Only card payment is available</label>
+            <form id="checkout-form" action="https://checkout.flutterwave.com/v3/hosted/pay" method="POST" onsubmit="return validateTime();">
                 <div class="form-group">
                     <label for="time-booking">Time Booking</label>
                     <input type="time" id="time-booking" class="time-booking" name="time_booking" required>
@@ -36,12 +37,27 @@
                     <input type="text" id="username" name="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                    <label for="email-address">Email Address</label>
-                    <input type="email" id="email-address" name="email_address" placeholder="Email address" required>
+                    <label for="username">Card Name</label>
+                    <input type="text" id="card-name" name="customer[name]" placeholder="Enter Card Name" 
+                        required>
                 </div>
+                <div class="form-group">
+                    <label for="email-address">Email Address</label>
+                    <input type="email"  id="card-number" name="customer[email]" 
+                        placeholder="Enter Your Email" required>
+                </div>
+                <input type="hidden"  name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
+                    <input type="hidden"  name="tx_ref" value="txref-81123" />
+                    <input type="hidden" name="amount" value="200" />
+                    <input type="hidden" name="currency" value="USD" />
+                    <input type="hidden" name="meta[source]" value="docs-html-test" />
+                    <input type="hidden" name="payment_type" value="card" /> 
+                    <input type="hidden" name="payment_options" value="card" /> 
+                    <input type="hidden" name="customizations[title]" value="book appointment" />
                 <div class="form-group">
                     <button type="submit" class="submit-btn">Pay Now</button>
                 </div>
+                
             </form>
         </div>
     </section>
@@ -50,7 +66,7 @@
     <footer class="footer-section">
         <nav class="footer-nav">
             <a href="Awakenpreview.html">Awaken Preview</a>
-            <a href="Getfundedpreview.html">Funded Preview</a>
+            <a href="Getfundedpreview.html">Get Funded Preview</a>
             <a href="index.html#author">Author</a>
             <a href="BookAppointment.html">Book Appointment</a>
         </nav>
