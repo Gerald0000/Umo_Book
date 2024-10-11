@@ -47,13 +47,13 @@
                         placeholder="Enter Your Email" required>
                 </div>
                 <input type="hidden"  name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
-                    <input type="hidden"  name="tx_ref" value="txref-81123" />
-                    <input type="hidden" name="amount" value="200" />
-                    <input type="hidden" name="currency" value="USD" />
-                    <input type="hidden" name="meta[source]" value="docs-html-test" />
-                    <input type="hidden" name="payment_type" value="card" /> 
-                    <input type="hidden" name="payment_options" value="card" /> 
-                    <input type="hidden" name="customizations[title]" value="book appointment" />
+                <input type="hidden"  name="tx_ref" value="txref-81123" />
+                <input type="hidden" name="amount" value="200" />
+                <input type="hidden" name="currency" value="USD" />
+                <input type="hidden" name="meta[source]" value="docs-html-test" />
+                <input type="hidden" name="payment_type" value="card" /> 
+                <input type="hidden" name="payment_options" value="card" /> 
+                <input type="hidden" name="customizations[title]" value="book appointment" />
                 <div class="form-group">
                     <button type="submit" class="submit-btn">Pay Now</button>
                 </div>
@@ -61,7 +61,6 @@
             </form>
         </div>
     </section>
-
     <!-- Footer Section -->
     <footer class="footer-section">
         <nav class="footer-nav">
@@ -72,20 +71,17 @@
         </nav>
         <a href="#" class="Terms-of-Use">Terms of Use and Privacy Policy</a>
     </footer>
-
     <script>
         function validateTime() {
             const timeInput = document.getElementById('time-booking').value;
             const dateInput = document.getElementById('date-booking').value;
-
             if (!dateInput || !timeInput) {
                 alert('Please select both a date and time.');
                 return false; // Prevent form submission
             }
-
+            
             // Create a date object based on the input values
             const bookingDateTime = new Date(`${dateInput}T${timeInput}:00`);
-
             // Define start and end times in London time
             const startTime = new Date(bookingDateTime);
             startTime.setHours(9, 0, 0); // 9 AM London time
