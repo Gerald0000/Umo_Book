@@ -24,15 +24,15 @@
             </div>
             <div class="checkout-hero-image">
                 <img src="hero-image.png" alt="The Awaken Book Cover">
+                <img src="Getfunded.png" alt="The Awaken Book Cover">
             </div>
-    </section>
+        </section>
 
         <!-- Checkout Form Section -->
-    <section class="checkout-form-section">
+        <section class="checkout-form-section">
             <div class="book-summary">
                 <div class="book-card">
                     <img src="Rectangle 4176.png" alt="Rectangle Background" class="rectangle-bg">
-
                     <!-- Book Image (Superimposed) -->
                     <img src="Book.png" alt="The Awaken Book" class="book-img">
                     <div class="book-details">
@@ -41,47 +41,128 @@
                 </div>
             </div>
             <div class="payment-form">
-                <form id="checkout-form" action="submit_checkout.php" method="POST">
+                <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
+                    <label style="text-align: center; font-weight: 600;">Note: Only card payment is available</label>
                     <div class="form-group">
-                        <label for="card-name">Card Name</label>
-                        <input type="text" id="card-name" name="card-name" placeholder="Enter Card Name" required>
+                        <label for="card-name">Name</label>
+                        <input type="text" id="card-name" name="customer[name]" placeholder="Enter Card Name" 
+                        required>
                     </div>
                     <div class="form-group">
-                        <label for="card-number">Card Number</label>
-                        <input type="text" id="card-number" name="card-number" placeholder="Enter Card Number" required>
+                        <label for="card-number">Email</label>
+                        <input type="email"  id="card-number" name="customer[email]" 
+                        placeholder="Enter Your Email" required>
                     </div>
                     <div class="form-group">
-                        <label for="expiry-date">Expiry Date</label>
-                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                        <label for="currency-select">Currency</label>
+                        <select name="currency" id="currency-select">
+                            <option value="USD">USD</option>
+                            <option value="EURO">EURO</option>
+                            <option value="NGN">NGN</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="cvv">CVV</label>
-                        <input type="password" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                        <label for="amount-select">Amount</label>
+                        <select name="amount" id="amount-select">
+                            <!-- These will be updated based on the currency selection -->
+                            <option value="25">USD</option>
+                            <option value="25">EURO</option>
+                            <option value="5000">NGN</option>
+                        </select>
                     </div>
+                    <div class="form-group">
+                        <label for="amount-select">Amount</label>
+                        <select name="amount" id="amount-select">
+                            <!-- These will be updated based on the currency selection -->
+                            <option value="25">USD</option>
+                            <option value="25">EURO</option>
+                            <option value="5000">NGN</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="books">books</label>
+                        <select name="book" id="bookselect">
+                            <!-- These will be updated based on the currency selection -->
+                            <option value="https://gerald0000.github.io/Umo_Book/checkout-result.html">The Awaken</option>
+                            <option value="https://gerald0000.github.io/Umo_Book/checkout-result.html">Get Funnded</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
+                    <input type="hidden" name="tx_ref" value="txref-81123" />
+                    <input type="hidden" name="meta[source]" value="docs-html-test" /> 
+                    <input type="hidden" name="customizations[title]" value="The Awaken" />
+                    <input type="hidden" name="payment_type" value="card" />
+                    <input type="hidden" name="redirect_url" value="https://gerald0000.github.io/Umo_Book/checkout-result.html" />
+                    <br>
                     <div class="form-group">
                         <button type="submit" class="submit-btn">Pay Now</button>
                     </div>
                     <div class="form-group">
-                        <label class="terms">
-                            <input type="checkbox" name="terms" required> I have read and agree to the Terms of Use and Privacy Policy
-                        </label>
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="checkbox" name="terms" required>
+                            <p>I have read and agree to the Terms of Use and Privacy Policy</p>
+                        </div>
                     </div>
-                </form>
+                  </form>
             </div>
         </section>
 
         <!-- Footer Section -->
-        
     </section>
     <footer class="footer-section">
         <nav class="footer-nav">
             <a href="Awakenpreview.html">Awaken Previews</a>
-            <a href="Getfundedpreview.html">Funded previews</a>
+            <a href="Getfundedpreview.html">Get Funded previews</a>
             <a href="index.html#author">Author</a>
             <a href="BookAppointment.html">Book Appointment</a>
         </nav>
         <a href="" class="Terms-of-Use"> Terms of Use and Privacy Policy</a>
     </footer>
+    <script>
+        function updateRedirectUrl() {
+            const selectElement = document.getElementById("bookselect");
+            const hiddenInput = document.getElementById('redirect_url');
+            hiddenInput.value = selectElement.value;
+        }
+    </script>
+    <script>
+        // Get the currency and amount select elements
+        const currencySelect = document.getElementById('currency-select');
+        const amountSelect = document.getElementById('amount-select');
+    
+        // Define amount options based on currency
+        const amountOptions = {
+            USD: [{ value: '25', text: '25 USD' }],
+            EURO: [{ value: '22', text: '22 EURO' }],
+            NGN: [{ value: '5000', text: '5000 NGN' }]
+        };
+    
+        // Function to update the amount select based on the selected currency
+        function updateAmountOptions(currency) {
+            // Clear the existing options
+            amountSelect.innerHTML = '';
+    
+            // Add the new options for the selected currency
+            amountOptions[currency].forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option.value;
+                opt.textContent = option.text;
+                amountSelect.appendChild(opt);
+            });
+        }
+    
+        // Listen for changes in the currency select
+        currencySelect.addEventListener('change', function () {
+            const selectedCurrency = currencySelect.value;
+            updateAmountOptions(selectedCurrency);
+        });
+    
+        // Initialize the amount options on page load
+        window.onload = function () {
+            updateAmountOptions(currencySelect.value);
+        };
+    </script>
+    
 </body>
 
 </html>

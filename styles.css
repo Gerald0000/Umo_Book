@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -72,6 +71,7 @@ body {
     width: 60px;
     height: 60px;
     cursor: pointer;
+    z-index: 20;
 }
 
 .top-icon img {
@@ -81,22 +81,27 @@ body {
 
 /* Hero Section */
 .hero-section {
+    position: relative;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     flex-wrap: wrap;
     background-color: #fff5e6;
-    padding: 5%;
-    width: 100%;
+    height: 650px;
 }
 .book-content{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 .hero-content {
   width: 100%;
+  padding: 5%;
+  transition: transform 1s ease-in-out;
+  flex-shrink: 0;
 }
 
 /* The Awaken Font Settings */
@@ -133,7 +138,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     font-weight: 400;
-    padding: 10px 5%;
+    padding: 10px 2%;
     /* Adjusted padding */
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -169,8 +174,8 @@ body {
     width: 500px;
 }
 /* Book Image */
-.hero-image img{
-    width: 80%;
+.hero-image {
+    width: 25%;
 }
 
 /* Pricing Section */
@@ -211,6 +216,29 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+    height: 70px;
+    width: 50px;
+}
+
+.left-button {
+    left: 2px;
+}
+
+.right-button {
+    right: 2px;
 }
 
 .pricing-card:hover {
@@ -475,7 +503,7 @@ body {
 }
 
 .checkout-hero-image img {
-    width:100%;
+    width:40%;
 }
 
 /* Checkout Form Section */
@@ -674,7 +702,8 @@ body {
     font-size: 20px; 
     padding: 25px;
 }
-@media (max-width: 1120px){
+
+@media (max-width: 950px){
     .book-des{
         display: flex;
         flex-direction: column-reverse;
@@ -683,17 +712,33 @@ body {
     .book-content{
         flex-direction: column-reverse;
         align-content: space-between;
+        align-items: start;
         flex-wrap: nowrap;
         width: 100%;
     }
     .hero-image img{
-        width: 60%;
+        width: 35%;
+    }
+    .hero-content h1 {
+        font-size: 100px;
+        line-height: 100px;
+    }
+    .hero-buttons .learn-more {
+        font-size: 15px;
+    }
+    .hero-buttons .Preview {
+        font-size: 15px;
+    }
+    /* Buy Now Button - positioned inside Learn More */
+    .hero-buttons .buy-now {
+        font-size: 15px;
+     
     }
     
 }
 @media (max-width: 737px) {
     .hero-content h1 {
-        font-size: 60px;
+        font-size: 50px;
         line-height: 100px;
     }
     .preview-page .hero-content h1 {
@@ -710,17 +755,21 @@ body {
         font-size: 16px;
     }
     .hero-buttons .learn-more {
-        font-size: 16px;
+        font-size: 13px;
     }
     
     /* Buy Now Button - positioned inside Learn More */
     .hero-buttons .buy-now {
-        font-size: 16px;
+        font-size: 13px;
        
     }
     .hero-buttons .Preview {
-        font-size: 16px;
+        font-size: 13px;
        
     }
+    .hero-section {
+        height: 550px;
+    }
+    
 
 }
