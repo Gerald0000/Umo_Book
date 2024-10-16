@@ -71,7 +71,6 @@ body {
     width: 60px;
     height: 60px;
     cursor: pointer;
-    z-index: 20;
 }
 
 .top-icon img {
@@ -87,7 +86,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     background-color: #fff5e6;
-    height: 650px;
+    height:680px;
 }
 .book-content{
     display: flex;
@@ -381,36 +380,30 @@ body {
 .preview-page{
     width: 100%;
 }
-.preview-page .hero-section {
+.header-section {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding-right: 50px;
+    width: 100%;
     background-color: #333;
     color: white;
-    width: 100%;
-    min-height: 400px;
+    padding: 5%;
     /* Adjusted to fill more space */
 }
-
-.preview-page .hero-content {
-    max-width: 100%;
-}
-
-.preview-page .hero-content h1 {
+.header-content h1 {
     font-family: 'Belanosima', sans-serif;
-    font-size: 120px;
+    font-size: 80px;
     /* Increased size */
     margin: 0;
 }
 
-.preview-page .hero-content h3 {
+.header-content h3 {
     font-size: 24px;
     margin: 10px 0 0;
 }
-
-.preview-page .hero-image img {
-    margin-right: 20px;
-    width: 80%;
+.image-cover{
+    width: 350px;
 }
 
 /* Book Preview Section */
@@ -702,7 +695,12 @@ body {
     font-size: 20px; 
     padding: 25px;
 }
-
+.select{
+    border-radius: 10px;
+    padding: 8px;
+    border-radius: 2px;
+    width: 100%;
+}
 @media (max-width: 950px){
     .book-des{
         display: flex;
@@ -712,7 +710,7 @@ body {
     .book-content{
         flex-direction: column-reverse;
         align-content: space-between;
-        align-items: start;
+        align-items: center;
         flex-wrap: nowrap;
         width: 100%;
     }
@@ -734,9 +732,39 @@ body {
         font-size: 15px;
      
     }
+    .image-cover{
+        width: 250px;
+    }
+    .header-content h1 {
+        font-size: 50px;
+    }
     
 }
 @media (max-width: 737px) {
+    .image-cover{
+        width: 250px;
+    }
+    .hero-image{
+        width: 45%;
+    }
+    .book-des{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width:100%;
+    }
+    .hero-buttons{
+        justify-content: center;
+        width: 100%;
+    }
+    .book-content{
+        flex-direction: column-reverse;
+        align-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    
     .hero-content h1 {
         font-size: 50px;
         line-height: 100px;
@@ -752,7 +780,7 @@ body {
         font-size: medium;
     }
     .hero-content p {
-        font-size: 16px;
+        font-size: 14px;
     }
     .hero-buttons .learn-more {
         font-size: 13px;
@@ -768,7 +796,7 @@ body {
        
     }
     .hero-section {
-        height: 550px;
+        height: 650px;
     }
     
 

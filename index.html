@@ -39,7 +39,7 @@
                          </p>
                         <div class="hero-buttons">
                             <a href="#pricing" class="btn learn-more">Learn More</a>
-                            <a href="Awakenpreview.html" class="btn Preview">preview</a> 
+                            <a href="Awakenpreview.html" class="btn Preview">Preview</a> 
                             <!-- Added anchor link to Pricing -->
                             <a href="checkout.html" class="btn buy-now">Buy Now</a> 
                             <!-- Added anchor link to Checkout -->
@@ -58,7 +58,7 @@
                             securing grant funding can be the key to turning ambitious ideas into impactful realities. </p>
                             <div class="hero-buttons">
                                 <a href="#pricing" class="btn learn-more">Learn More</a>
-                                <a href="Getfundedpreview.html" class="btn Preview">preview</a> 
+                                <a href="Getfundedpreview.html" class="btn Preview">Preview</a> 
                                 <!-- Added anchor link to Pricing -->
                                 <a href="checkout.html" class="btn buy-now">Buy Now</a> 
                                 <!-- Added anchor link to Checkout -->
@@ -121,6 +121,18 @@
             
         </div>
     </section>
+    <script>
+        /* Open the overlay navigation */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+    
+        /* Close the overlay navigation */
+        function closeNav() {
+            document.getElementById("top-icon ").style.width = "0%";
+            
+        }
+    </script>
     <script>
         // Hero Slideshow
         (function() {
@@ -201,23 +213,7 @@
         // Pricing Card Slideshow
          // IIFE for Pricing Card Slideshow
     
-        /* Open the overlay navigation */
-        function openNav() {
-            document.getElementById("myNav").style.width = "100%";
-            document.querySelectorAll('.top-icon').forEach(icon => {
-        icon.style.zIndex = '';  // Remove z-index
-    });
-
-        }
-    
-        /* Close the overlay navigation */
-        function closeNav() {
-            document.getElementById("top-icon ").style.width = "0%";
-              document.querySelectorAll('.top-icon').forEach(icon => {
-        icon.style.zIndex = '';  // Remove z-index
-    });
-            
-        }
+        
     </script>
     
 
