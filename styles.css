@@ -71,6 +71,7 @@ body {
     width: 60px;
     height: 60px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .top-icon img {
@@ -87,7 +88,6 @@ body {
     flex-wrap: wrap;
     background-color: #fff5e6;
     height:680px;
-    z-index: -1;
 }
 .book-content{
     display: flex;
