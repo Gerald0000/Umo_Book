@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Status</title>
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Function to handle payment status
+        function handlePaymentStatus() {
+            const status = getQueryParameter('status');
+            const messageElement = document.getElementById('message');
+
+            if (status === 'successful') {
+                messageElement.innerHTML = 
+                    'Payment successful! Loading booking system... Please wait, this might take a while. Do not leave this page...';
+                // Dynamically load Calendly widget
+                loadCalendlyWidget();
+            } else if (status === 'cancelled') {
+                messageElement.innerHTML = 'Payment cancelled! Redirecting to the home page...';
+                // Redirect to home page after 3 seconds
+                setTimeout(() => {
+                    window.location.href = '/BookAppointment.html';
+                }, 3000);
+            } else {
+                messageElement.innerHTML = 'Payment failed or an unknown error occurred. Redirecting to the home page...';
+                // Redirect to home page after 3 seconds
+                setTimeout(() => {
+                    window.location.href = '/BookAppointment.html';
+                }, 3000);
+            }
+        }
+
+        // Function to load the Calendly widget
+        function loadCalendlyWidget() {
+            const calendlyDiv = document.createElement('div');
+            calendlyDiv.className = 'calendly-inline-widget';
+            calendlyDiv.setAttribute('data-url', 'https://calendly.com/ukahgerald12358/book');
+            calendlyDiv.style.minWidth = '320px';
+            calendlyDiv.style.height = '700px';
+            document.body.appendChild(calendlyDiv);
+
+            const script = document.createElement('script');
+            script.src = 'https://assets.calendly.com/assets/external/widget.js';
+            script.async = true;
+            document.body.appendChild(script);
+        }
+
+        // Run the function when the page loads
+        window.onload = handlePaymentStatus;
+    </script>
+</head>
+
+<body>
+    <h1 id="message">Processing payment status...</h1>
+</body>
+
+</html>
