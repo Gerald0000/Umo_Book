@@ -702,6 +702,9 @@ body {
     border-radius: 2px;
     width: 100%;
 }
+.preview-section h3{
+    color: #d89b3a;
+}
 @media (max-width: 950px){
     .book-des{
         display: flex;
@@ -716,7 +719,7 @@ body {
         width: 100%;
     }
     .hero-image{
-        width: 45%;
+        width: 25%;
     }
     .hero-content h1 {
         font-size: 100px;

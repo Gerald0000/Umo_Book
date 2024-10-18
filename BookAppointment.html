@@ -20,31 +20,15 @@
             Once Payment is Confirmed, Proceed to Schedule a 40-Minute Meeting with Us.
         </p>
         <div class="payment-form">
-            <label style="text-align: center; font-weight: 600;">Office time: 9:00 AM to 5:00 PM</label>
-            <label style="text-align: center; font-weight: 600;">(UK London Time)</label>
             <label style="text-align: center; font-weight: 600;">40 minutes consultation fee is $200</label>
             <form id="checkout-form" action="https://checkout.flutterwave.com/v3/hosted/pay" method="POST" onsubmit="return validateTime();">
                 <div class="form-group">
-                    <label for="time-booking">Time Booking</label>
-                    <input type="time" id="time-booking" class="time-booking" name="time_booking" required>
-                </div>
-                <div class="form-group">
-                    <label for="date-booking">Date Booking</label>
-                    <input type="date" id="date-booking" name="date_booking" required>
-                </div>
-                <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Username" required>
-                </div>
-                <div class="form-group">
-                    <label for="username">Card Name</label>
-                    <input type="text" id="card-name" name="customer[name]" placeholder="Enter Card Name" 
-                        required>
+                    <input type="text" id="username" name="customer[name]" placeholder="Username" required>
                 </div>
                 <div class="form-group">
                     <label for="email-address">Email Address</label>
-                    <input type="email"  id="card-number" name="customer[email]" 
-                        placeholder="Enter Your Email" required>
+                    <input type="email"  id="card-number" name="customer[email]" placeholder="Enter Your Email" required>
                 </div>
                 <input type="hidden"  name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
                 <input type="hidden"  name="tx_ref" value="txref-81123" />
@@ -70,6 +54,20 @@
         </nav>
         <a href="#" class="Terms-of-Use">Terms of Use and Privacy Policy</a>
     </footer>
+    <script>
+        // Function to generate a random transaction reference
+        function generateRandomTxRef() {
+            const randomNum = Math.floor(Math.random() * 1e8); // Random number up to 8 digits
+            const timestamp = Date.now(); // Current timestamp
+            return `txref-${randomNum}-${timestamp}`; // Concatenating for uniqueness
+        }
+
+        // Set the random value in the hidden input field when the page loads
+        window.onload = function() {
+            const txRefInput = document.querySelector('input[name="tx_ref"]');
+            txRefInput.value = generateRandomTxRef();
+        };
+    </script>
     <script>
         function validateTime() {
             const timeInput = document.getElementById('time-booking').value;

@@ -14,23 +14,33 @@
         const urlParams = new URLSearchParams(window.location.search);
         const status = urlParams.get('status');
         const messageElement = document.getElementById('message');
+
+        // Function to trigger download
+        function downloadFile(url) {
+            const anchor = document.createElement('a');
+            anchor.href = url;
+            anchor.download = ''; // Suggest download behavior
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+        }
+
         // Handle based on the status
         if (status === 'successful') {
-            // Redirect to success page
-            messageElement.textContent = 'Payment successful! downloading book... please this might take while dont leave this page...';
-            window.location.href = "https://mega.nz/file/AsgWVAhQ#isXGprskZbLP4KnLNuNHcbI279s6FnLcsj8Vydm_sio";
+            messageElement.textContent = 'Payment successful! Downloading book... Please wait, do not leave this page.';
+            setTimeout(() => {
+                downloadFile('https://mega.nz/file/AsgWVAhQ#isXGprskZbLP4KnLNuNHcbI279s6FnLcsj8Vydm_sio');
+            }, 2000); // Slight delay to show message before download
         } else if (status === 'cancelled') {
-            // Redirect to cancel page
             messageElement.textContent = 'Payment cancelled! Redirecting to the home page...';
-            setTimeout(function () {
+            setTimeout(() => {
                 window.location.href = '/checkout.html';
             }, 3000); // Wait 3 seconds before redirecting
         } else {
-            // Handle any other statuses or errors
-            messageElement.textContent = 'Payment failed or an unknown error occurred Redirecting to the home page.';
-            setTimeout(function () {
+            messageElement.textContent = 'Payment failed or an unknown error occurred. Redirecting to the home page...';
+            setTimeout(() => {
                 window.location.href = '/checkout.html';
-            }, 3000); // Wait 3 seconds before redirecting to an error page
+            }, 3000); // Wait 3 seconds before redirecting
         }
     </script>
 </body>
