@@ -40,6 +40,14 @@
                         placeholder="Enter Your Email" required>
                     </div>
                     <div class="form-group">
+                        <label for="books"> Select Books</label>
+                        <select name="book" id="bookselect" class="select">
+                            <!-- These will be updated based on the currency selection -->
+                            <option value="https://gerald0000.github.io/Umo_Book/endpoint/Awakencheckout-result.php">The Awaken</option>
+                            <option value="https://gerald0000.github.io/Umo_Book/endpoint/Getfundedcheckout-result.php">Get Funded</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="currency-select">Currency</label>
                         <select name="currency"   id="currency-select" class="select">
                             <option value="USD">USD</option>
@@ -56,20 +64,13 @@
                             <option value="5000">NGN</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="books">Books</label>
-                        <select name="book" id="bookselect" class="select">
-                            <!-- These will be updated based on the currency selection -->
-                            <option value="https://gerald0000.github.io/Umo_Book/checkout-result.html">The Awaken</option>
-                            <option value="https://gerald0000.github.io/Umo_Book/checkout-result.html">Get Funnded</option>
-                        </select>
-                    </div>
+                    
                     <input type="hidden" name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
                     <input type="hidden" name="tx_ref" value="txref-81123" />
                     <input type="hidden" name="meta[source]" value="docs-html-test" /> 
                     <input type="hidden" name="customizations[title]" value="The Awaken" />
                     <input type="hidden" name="payment_type" value="card" />
-                    <input type="hidden" name="redirect_url" value="https://gerald0000.github.io/Umo_Book/checkout-result.html" />
+                    <input type="hidden" name="redirect_url"/>
                     <br>
                     <div class="form-group">
                         <button type="submit" class="submit-btn">Pay Now</button>
@@ -110,7 +111,7 @@
         // Define amount options based on currency
         const amountOptions = {
             USD: [{ value: '25', text: '25 USD' }],
-            EURO: [{ value: '22', text: '25 EURO' }],
+            EURO: [{ value: '25', text: '25 EURO' }],
             NGN: [{ value: '5000', text: '5000 NGN' }]
         };
     

@@ -715,8 +715,8 @@ body {
         flex-wrap: nowrap;
         width: 100%;
     }
-    .hero-image img{
-        width: 35%;
+    .hero-image{
+        width: 45%;
     }
     .hero-content h1 {
         font-size: 100px;
@@ -746,7 +746,7 @@ body {
         width: 250px;
     }
     .hero-image{
-        width: 45%;
+        width: 52%;
     }
     .book-des{
         display: flex;
@@ -797,7 +797,7 @@ body {
        
     }
     .hero-section {
-        height: 650px;
+        height: 680px;
     }
     
 

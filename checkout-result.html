@@ -23,13 +23,13 @@
             // Redirect to cancel page
             messageElement.textContent = 'Payment cancelled! Redirecting to the home page...';
             setTimeout(function () {
-                window.location.href = '/index.html';
+                window.location.href = '/checkout.html';
             }, 3000); // Wait 3 seconds before redirecting
         } else {
             // Handle any other statuses or errors
             messageElement.textContent = 'Payment failed or an unknown error occurred Redirecting to the home page.';
             setTimeout(function () {
-                window.location.href = '/index.html';
+                window.location.href = '/checkout.html';
             }, 3000); // Wait 3 seconds before redirecting to an error page
         }
     </script>
