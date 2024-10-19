@@ -16,17 +16,17 @@
         if ($status === 'successful') {
             echo 'Payment successful! Downloading book... please wait, this might take a while. Do not leave this page...';
             // Redirect to download link
-            header("Location: https://mega.nz/file/AsgWVAhQ#isXGprskZbLP4KnLNuNHcbI279s6FnLcsj8Vydm_sio");
+            header("Location:https://mega.nz/file/vrg3ibrA#rlZdh9igpsyumEF-fVTAsSH1qP9VIJyUooftl2DlWNk");
             exit(); // Make sure to exit after header redirect
         } elseif ($status === 'cancelled') {
             echo 'Payment cancelled! Redirecting to the home page...';
             // Redirect to home page after 3 seconds
-            header("refresh:3;url=/index.html");
+            header("refresh:3;url=/checkout.html");
             exit();
         } else {
             echo 'Payment failed or an unknown error occurred. Redirecting to the home page...';
             // Redirect to home page after 3 seconds
-            header("refresh:3;url=/index.html");
+            header("refresh:3;url=/checkout.html");
             exit();
         }
         ?>
