@@ -11,12 +11,11 @@
         <?php
         // Get the 'status' query parameter from the URL
         $status = isset($_GET['status']) ? $_GET['status'] : '';
-
         // Handle based on the status
         if ($status === 'successful') {
             echo 'Payment successful! Downloading book... please wait, this might take a while. Do not leave this page...';
             // Redirect to download link
-            header("Location:https://mega.nz/file/vrg3ibrA#rlZdh9igpsyumEF-fVTAsSH1qP9VIJyUooftl2DlWNk");
+            header("Location:https://mega.nz/file/H6ZAhAwA#HrmbkU2YKWysjK6XMX1yc0DtdJkOOeAAXh-2GK7JnGg");
             exit(); // Make sure to exit after header redirect
         } elseif ($status === 'cancelled') {
             echo 'Payment cancelled! Redirecting to the home page...';

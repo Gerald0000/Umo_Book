@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Belanosima&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Belanosima&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <section class="checkout-page">
         <!-- Checkout Hero Section -->
@@ -17,35 +17,66 @@
                 <h1>Checkout</h1>
             </div>
             <div class="checkout-hero-image">
-                <img src="hero-image.png" alt="The Awaken Book Cover">
-                <img src="Getfunded.png" alt="The Awaken Book Cover">
+                <img src="image/hero-image.png" alt="The Awaken Book Cover">
+                <img src="image/Getfunded.png" alt="Get Funded Book Cover">
             </div>
         </section>
+
         <!-- Checkout Form Section -->
         <section class="checkout-form-section">
+            <div class="toggle-container">
+                <p id="toggleTitle">How to use PDF reader on Android</p>
+                <div id="slideContent">
+                   <p style="font-weight: bold;">Step 1: use the link below to get to the pdfe reader</p>
+                   <a href="https://app.allaboutpdf.com/reader/" >https://app.allaboutpdf.com/reader/</a>
+                   <p  style="font-weight: bold;">Step 2(optional): click on the icon shown in the imagae below on your chrome browser</p>
+                   <img  src="/image/pdfe phone-steps/step2.png" style="width: 40%; display: flex; flex-direction: row; align-self: center;justify-self: center;"/>
+                   <p  style="font-weight: bold;">Step 3(optional): click on add to screen</p>
+                   <img src="/image/pdfe phone-steps/step3.png"  style="width: 40%; display: flex; flex-direction: row; align-self: center;justify-self: center;"/>
+                   <p  style="font-weight: bold;">Step 4(optional): click add</p>
+                   <img src="/image/pdfe phone-steps/step4.jpg"  style="width: 40%; display: flex; flex-direction: row; align-self: center;justify-self: center;"/>
+                   <p  style="font-weight: bold;">Step 5(optional): check your phone home screen</p>
+                   <img src="/image/pdfe phone-steps/step5.jpg"  style="width: 40%; display: flex; flex-direction: row; align-self: center;justify-self: center;"/>
+                </div>
+                <a href="https://apps.apple.com/app/id1536653272" style="font-weight: bold;">Get PDFe reader on Iphone</a>
+                <p></p>
+                <a href="https://allaboutpdf.com/download" style="font-weight: bold;">Get PDFe reader on Desktop</a>
+                <p id="toggleTitle1">How to download the book on your phone</p>
+                <div id="slideContent1">
+                   <p style="font-weight: bold;">Step 1:after a successful payment click on the icon shown below</p>
+                   <img  src="/image/how-to-download/step1.jpg" style="width: 40%; display: flex; flex-direction: row; align-self: center;justify-self: center;"/>
+                   <p  style="font-weight: bold;">Step 2: click on download button</p>
+                   <img src="/image/how-to-download/step2.jpg"  style="width: 40%; display: flex; flex-direction: row; align-self: center;justify-self: center;"/>
+                </div>
+            </div>
             <div class="payment-form">
-                <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
+               
+                <form id="payment-form" method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
+                    <label style="text-align: center; font-weight: bolder;">
+                        Note: Use a (PDFe) reader to view all purchased books.
+                    </label>
+                    <label style="text-align: center; font-weight: bolder; color: red;">
+                        Warning: Don't close the page after a successful payment; please wait to download the PDFe file.
+                    </label>
+                    
                     <div class="form-group">
-                        <label for="card-name">Name</label>
-                        <input type="text" id="card-name" name="customer[name]" placeholder="Enter Name" 
-                        required>
+                        <label for="customer-name">Name</label>
+                        <input type="text" id="customer-name" name="customer[name]" placeholder="Enter Name" required>
                     </div>
                     <div class="form-group">
-                        <label for="card-number">Email</label>
-                        <input type="email"  id="card-number" name="customer[email]"  
-                        placeholder="Enter Your Email" required>
+                        <label for="customer-email">Email</label>
+                        <input type="email" id="customer-email" name="customer[email]" placeholder="Enter Your Email" required>
                     </div>
                     <div class="form-group">
-                        <label for="books"> Select Books</label>
-                        <select name="book" id="bookselect" class="select">
-                            <!-- These will be updated based on the currency selection -->
-                            <option value="https://gerald0000.github.io/Umo_Book/endpoint/Awakencheckout-result.php">The Awaken</option>
-                            <option value="https://gerald0000.github.io/Umo_Book/endpoint/Getfundedcheckout-result.php">Get Funded</option>
+                        <label for="books">Select Book</label>
+                        <select id="mySelect" class="select" required>
+                            <option value="Awaken">The Awaken</option>
+                            <option value="GetFunded">Get Funded</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="currency-select">Currency</label>
-                        <select name="currency"   id="currency-select" class="select">
+                        <select name="currency" id="currency-select" class="select" required>
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                             <option value="NGN">NGN</option>
@@ -53,70 +84,113 @@
                     </div>
                     <div class="form-group">
                         <label for="amount-select">Amount</label>
-                        <select name="amount" id="amount-select" class="select">
-                            <!-- These will be updated based on the currency selection -->
-                            <option value="25">25 USD</option>
-                            <option value="25">EUR</option>
-                            <option value="5000">NGN</option>
+                        <select name="amount" id="amount-select" class="select" required>
+                            <!-- Populated based on currency selection -->
                         </select>
                     </div>
-                    
-                    <input type="hidden" name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
-                    <input type="hidden" name="tx_ref" value="txref-81123" />
-                    <input type="hidden" name="meta[source]" value="docs-html-test" /> 
-                    <input type="hidden" name="customizations[title]" value="Book" />
-                    <input type="hidden" name="payment_type" value="card" />
-                    <input type="hidden" name="redirect_url"/>
+                    <input type="hidden" name="public_key" value="FLWPUBK-25ec66dcf688125933d59cb00728aa15-X" />
+                    <input type="hidden" name="tx_ref" value="" />
+                    <input type="hidden" name="meta[source]" value="docs-html-test" />
+                    <input type="hidden" id="title" name="customizations[title]" value="Book" />
+                    <input type="hidden" name="payment_type" value="card, bank_transfer, ussd, mobilemoneyghana, paypal">
+                    <input type="hidden" id="redirect_url" name="redirect_url"  value="https://www.umonsi.com/endpoint/Awakencheckout-result.php"/>
                     <br>
                     <div class="form-group">
-                        <button type="submit" class="submit-btn">Pay Now</button>
+                        <button type="button" id="pay-now-button" class="submit-btn">Pay Now</button>
                     </div>
-                    <div class="form-group">
-                        <div style="display: flex; flex-direction: row; align-items: center;">
-                            <input type="checkbox" name="ter" required>
-                            <p>I have read and agree to the Terms of Use and Privacy Policy</p>
-                        </div>
+                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                        <input type="checkbox" id="terms-checkbox" name="terms" style="width: 5%; margin-right: 5%;" required>
+                        <p>I have read and agree to the Terms of Use and Privacy Policy</p>
                     </div>
-                  </form>
+                </form>
             </div>
         </section>
 
         <!-- Footer Section -->
     </section>
+
     <footer class="footer-section">
         <nav class="footer-nav">
             <a href="Awakenpreview.html">Awaken Previews</a>
-            <a href="Getfundedpreview.html">Get Funded previews</a>
+            <a href="Getfundedpreview.html">Get Funded Previews</a>
             <a href="index.html#author">Author</a>
             <a href="BookAppointment.html">Book Appointment</a>
         </nav>
-        <a href="" class="Terms-of-Use"> Terms of Use and Privacy Policy</a>
+        <a href="terms.html" class="Terms-of-Use">Terms of Use and Privacy Policy</a>
     </footer>
+
     <script>
-        function updateRedirectUrl() {
-            const selectElement = document.getElementById("bookselect");
-            const hiddenInput = document.getElementById('redirect_url');
-            hiddenInput.value = selectElement.value;
-        }
-    </script>
-    <script>
-        // Get the currency and amount select elements
-        const currencySelect = document.getElementById('currency-select');
-        const amountSelect = document.getElementById('amount-select');
+        // script.js
+
+        const toggleTitle = document.getElementById("toggleTitle");
+        const slideContent = document.getElementById("slideContent");
+
+        toggleTitle.addEventListener("click", () => {
+            // Check if the content is currently visible
+            if (slideContent.style.maxHeight) {
+                // If it's visible, hide it
+                slideContent.style.maxHeight = null;
+            } else {
+                // If it's hidden, dynamically set max-height to content's scrollHeight
+                slideContent.style.maxHeight = slideContent.scrollHeight + "px";
+            }
+        });
+        const toggleTitle1 = document.getElementById("toggleTitle1");
+        const slideContent1 = document.getElementById("slideContent1");
+
+        toggleTitle1.addEventListener("click", () => {
+            // Check if the content is currently visible
+            if (slideContent1.style.maxHeight) {
+                // If it's visible, hide it
+                slideContent1.style.maxHeight = null;
+            } else {
+                // If it's hidden, dynamically set max-height to content's scrollHeight
+                slideContent1.style.maxHeight = slideContent1.scrollHeight + "px";
+            }
+        });
+
+        // Handle book selection and update redirect URL
+        document.getElementById("mySelect").addEventListener("change", function() {
+            const redirectUrlInput = document.getElementById("redirect_url");
+
+            if (this.value === "Awaken") {
+                redirectUrlInput.value = "https://www.umonsi.com/endpoint/Awakencheckout-result.php";
+            } else if (this.value === "GetFunded") {
+                redirectUrlInput.value = "https://www.umonsi.com/endpoint/Getfundedcheckout-result.php";
+            }
+        });
+
+        // Function to handle redirection based on selected currency
+        function handlePayment() {
+            const checkbox = document.getElementById("terms-checkbox");
+            if (!checkbox.checked) {
+                alert("Please agree to the Terms of Use and Privacy Policy before proceeding.");
+                return;
+            }
+                // Submit the form to Flutterwave for NGN
+            document.getElementById('payment-form').submit();
     
+        }
+
+        // Function to generate a random transaction reference
+        function generateRandomTxRef() {
+            const randomNum = Math.floor(Math.random() * 1e8); // Random number up to 8 digits
+            const timestamp = Date.now(); // Current timestamp
+            return `txref-${randomNum}-${timestamp}`; // Unique reference
+        }
+
         // Define amount options based on currency
         const amountOptions = {
             USD: [{ value: '25', text: '25 USD' }],
-            EUR: [{ value: '25', text: '25 EUR' }],
+            EUR: [{ value: '22', text: '22 EUR' }],
             NGN: [{ value: '5000', text: '5000 NGN' }]
         };
-    
-        // Function to update the amount select based on the selected currency
+
+        // Update the amount select options based on selected currency
         function updateAmountOptions(currency) {
-            // Clear the existing options
-            amountSelect.innerHTML = '';
-    
-            // Add the new options for the selected currency
+            const amountSelect = document.getElementById('amount-select');
+            amountSelect.innerHTML = ''; // Clear existing options
+
             amountOptions[currency].forEach(option => {
                 const opt = document.createElement('option');
                 opt.value = option.value;
@@ -124,19 +198,24 @@
                 amountSelect.appendChild(opt);
             });
         }
-    
-        // Listen for changes in the currency select
-        currencySelect.addEventListener('change', function () {
-            const selectedCurrency = currencySelect.value;
-            updateAmountOptions(selectedCurrency);
-        });
-    
-        // Initialize the amount options on page load
+
+        // Listen for currency selection changes and update form action and amount options
         window.onload = function () {
-            updateAmountOptions(currencySelect.value);
+            document.getElementById('currency-select').addEventListener('change', function () {
+                updateAmountOptions(this.value);
+            });
+
+            // Set a random transaction reference on page load
+            document.querySelector('input[name="tx_ref"]').value = generateRandomTxRef();
+
+            // Initialize amount options based on selected currency
+            const initialCurrency = document.getElementById('currency-select').value;
+            updateAmountOptions(initialCurrency);
+
+            // Add click event listener to the Pay Now button
+            document.getElementById('pay-now-button').addEventListener('click', handlePayment);
         };
     </script>
-    
-</body>
 
+</body>
 </html>

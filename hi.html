@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Down Toggle</title>
+    <style>
+        /* CSS Styles */
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .toggle-container {
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        #toggleTitle {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        #slideContent {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <p id="toggleTitle">How to use PDF reader on Android</p>
+        <div id="slideContent">
+            <p>To use a PDF reader on Android, you can download and install apps such as Adobe Acrobat Reader, Google PDF Viewer, or any other preferred PDF reader app from the Google Play Store. Once installed, open the app, and you can view, edit, or annotate PDF files on your Android device.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Code
+
+        const toggleTitle = document.getElementById("toggleTitle");
+        const slideContent = document.getElementById("slideContent");
+
+        toggleTitle.addEventListener("click", () => {
+            // Check if the content is currently visible
+            if (slideContent.style.maxHeight) {
+                // If it's visible, hide it
+                slideContent.style.maxHeight = null;
+            } else {
+                // If it's hidden, dynamically set max-height to content's scrollHeight
+                slideContent.style.maxHeight = slideContent.scrollHeight + "px";
+            }
+        });
+    </script>
+</body>
+</html>

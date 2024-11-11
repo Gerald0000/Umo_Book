@@ -30,13 +30,13 @@
                     <label for="email-address">Email Address</label>
                     <input type="email"  id="card-number" name="customer[email]" placeholder="Enter Your Email" required>
                 </div>
-                <input type="hidden"  name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
-                <input type="hidden"  name="tx_ref" value="txref-81123" />
+                <input type="hidden"  name="public_key" value="FLWPUBK-25ec66dcf688125933d59cb00728aa15-X" />
+                <input type="hidden"  name="tx_ref" value="" />
                 <input type="hidden" name="amount" value="200" />
                 <input type="hidden" name="currency" value="USD" />
                 <input type="hidden" name="meta[source]" value="docs-html-test" />
                 <input type="hidden" name="customizations[title]" value="book appointment" />
-                <input type="hidden" name="redirect_url"  value="https://gerald0000.github.io/Umo_Book/meetup.html"/>
+                <input type="hidden" name="redirect_url"  value="https://umonsi.com/meetup.html"/>
                 <div class="form-group">
                     <button type="submit" class="submit-btn">Pay Now</button>
                 </div>
@@ -68,34 +68,7 @@
             txRefInput.value = generateRandomTxRef();
         };
     </script>
-    <script>
-        function validateTime() {
-            const timeInput = document.getElementById('time-booking').value;
-            const dateInput = document.getElementById('date-booking').value;
-            if (!dateInput || !timeInput) {
-                alert('Please select both a date and time.');
-                return false; // Prevent form submission
-            }
-            
-            // Create a date object based on the input values
-            const bookingDateTime = new Date(`${dateInput}T${timeInput}:00`);
-            // Define start and end times in London time
-            const startTime = new Date(bookingDateTime);
-            startTime.setHours(9, 0, 0); // 9 AM London time
-
-            const endTime = new Date(bookingDateTime);
-            endTime.setHours(17, 0, 0); // 5 PM London time
-
-            // Check if the entered time is within the allowed range
-            if (bookingDateTime < startTime || bookingDateTime > endTime) {
-                alert('Please select a time between 09:00 AM and 05:00 PM UK time.');
-                return false; // Prevent form submission
-            }
-
-            return true; // Allow form submission
-        }
-    </script>
+    
 </body>
 
 </html>
-
