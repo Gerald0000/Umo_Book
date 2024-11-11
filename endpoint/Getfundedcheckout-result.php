@@ -15,7 +15,7 @@
         if ($status === 'successful') {
             echo 'Payment successful! Downloading book... please wait, this might take a while. Do not leave this page...';
             // Redirect to download link
-            header("Location:https://mega.nz/file/H6ZAhAwA#HrmbkU2YKWysjK6XMX1yc0DtdJkOOeAAXh-2GK7JnGg");
+            header("Location:https://mega.nz/file/ij50zCKY#5ou-ER16rIZGGu8xLh_34yr7J-DO_GuwMUJIJ4E0xrI");
             exit(); // Make sure to exit after header redirect
         } elseif ($status === 'cancelled') {
             echo 'Payment cancelled! Redirecting to the home page...';
